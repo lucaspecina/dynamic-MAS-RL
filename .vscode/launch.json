@@ -1,0 +1,61 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Train RL (GRPO)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train_rl.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "cwd": "${workspaceFolder}",
+            "args": []
+        },
+        {
+            "name": "Python: Train RL (GRPO) - Debug Mode",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train_rl.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}",
+                "PYTORCH_CUDA_ALLOC_CONF": "max_split_size_mb:512"
+            },
+            "cwd": "${workspaceFolder}",
+            "args": ["--debug"],
+            "stopOnEntry": false,
+            "python": "${command:python.interpreterPath}"
+        },
+        {
+            "name": "Python: Train RL (GRPO) - Quick Test",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train_rl.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "cwd": "${workspaceFolder}",
+            "args": ["--debug", "--steps", "2", "--batch-problems", "1", "--trajectories", "1"],
+            "stopOnEntry": false
+        },
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
+
